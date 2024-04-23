@@ -12,7 +12,7 @@ _Codemod to remove `inject as service`_<sup>1</sup>
 1. [Contributing](#contributing)
 1. [License](#license)
 
-<sup>1. `@ember/service` has provided `service` since [Ember 4.1](https://blog.emberjs.com/ember-4-1-released/). `inject`, which became an alias to `service`, is [planned to be deprecated in v6](https://rfcs.emberjs.com/id/1001-deprecate-named-inject).</sup>
+<sup>1. `@ember/service` provides `service` since [Ember 4.1](https://blog.emberjs.com/ember-4-1-released/). `inject`, which became an alias to `service`, is [planned to be deprecated in v6](https://rfcs.emberjs.com/id/1001-deprecate-named-inject).</sup>
 
 
 ## Features
@@ -41,14 +41,14 @@ npx ember-codemod-remove-inject-as-service <arguments>
 
 Step 2. Fix formatting issues.
 
-- Optional: Do a find-and-replace-all, if you want to place `@service()` and `declare` on the same line when possible.
+- Optional: Do a find-and-replace-all in TS files, if you want to place `@service()` and `declare` on the same line when possible.
 
-    - Find: `@service\((.+)\)(\n|\s)+declare`
+    - Find: `@service\((.+)\)[\n\s]+declare`
     - Replace: `@service($1) declare`
 
-- Optional: Do a find-and-replace-all, if you want to place `@service` and `declare` on the same line when possible.
+- Optional: Do a find-and-replace-all in TS files, if you want to place `@service` and `declare` on the same line when possible.
 
-    - Find: `@service(\n|\s)+declare`
+    - Find: `@service[\n\s]+declare`
     - Replace: `@service declare`
 
 - Run `lint:js:fix` (i.e. autofix from `eslint` and `prettier`).
