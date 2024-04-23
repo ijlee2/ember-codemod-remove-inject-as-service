@@ -3,9 +3,9 @@ import { action } from '@ember/object';
 import { service } from '@ember/service';
 
 export default class Example5Controller extends Controller {
-  @inject('domain-1/business-logic') domain1BusinessLogic;
-  @inject currentUser;
-  @inject api;
+  @service('domain-1/business-logic') domain1BusinessLogic;
+  @service currentUser;
+  @service api;
 
   @action async consent() {
     const id = this.currentUser.user.id;
