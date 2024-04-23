@@ -1,4 +1,4 @@
-import Service, { inject } from '@ember/service';
+import Service, { service } from '@ember/service';
 
 import type CurrentUserService from '../current-user';
 

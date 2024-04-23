@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { inject, type Registry as Services } from '@ember/service';
+import { service, type Registry as Services } from '@ember/service';
 
 export default class Example3Controller extends Controller {
   @inject('domain-1/business-logic')

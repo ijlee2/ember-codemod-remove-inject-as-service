@@ -1,6 +1,6 @@
 import { action } from '@ember/object';
 import type { Registry as Services } from '@ember/service';
-import { service as s } from '@ember/service';
+import { service } from '@ember/service';
 
 export default class Example4Utility {
   @s('domain-1/business-logic')

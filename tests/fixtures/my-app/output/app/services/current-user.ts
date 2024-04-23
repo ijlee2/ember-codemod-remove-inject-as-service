@@ -1,6 +1,6 @@
 import { action } from '@ember/object';
 import Service, {
-  inject as service,
+  service,
   type Registry as Services,
 } from '@ember/service';
 import { tracked } from '@glimmer/tracking';

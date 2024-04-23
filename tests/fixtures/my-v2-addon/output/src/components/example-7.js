@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 
 export default Component.extend({
   domain1BusinessLogic: service('domain-1/business-logic'),

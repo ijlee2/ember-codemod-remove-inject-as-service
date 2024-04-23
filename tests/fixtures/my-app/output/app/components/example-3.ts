@@ -1,5 +1,5 @@
 import { action } from '@ember/object';
-import { inject as service, type Registry as Services } from '@ember/service';
+import { service, type Registry as Services } from '@ember/service';
 import Component from '@glimmer/component';
 
 export default class Example3Component extends Component {

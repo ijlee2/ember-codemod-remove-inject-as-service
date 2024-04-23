@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { service as s } from '@ember/service';
+import { service } from '@ember/service';
 
 export default Route.extend({
   xyz: s('api'),

@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { inject } from '@ember/service';
+import { service } from '@ember/service';
 
 import type ApiService from '../services/api';
 import type CurrentUserService from '../services/current-user';
