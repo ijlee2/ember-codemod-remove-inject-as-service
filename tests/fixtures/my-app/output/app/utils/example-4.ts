@@ -6,8 +6,10 @@ export default class Example4Utility {
   @service('domain-1/business-logic')
   declare domain1BusinessLogic: Services['domain-1/business-logic'];
 
-  @service('current-user') declare currentUser: Services['current-user'];
-  @service('api') declare api: Services['api'];
+  @service('current-user')
+  declare currentUser: Services['current-user'];
+  @service('api')
+  declare api: Services['api'];
 
   @action async consent(): Promise<void> {
     const id = this.currentUser.user!.id;

@@ -11,7 +11,8 @@ type User = {
 };
 
 export default class CurrentUserService extends Service {
-  @service declare api: Services['api'];
+  @service
+  declare api: Services['api'];
 
   @tracked user?: User;
 

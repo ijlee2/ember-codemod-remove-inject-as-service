@@ -6,8 +6,10 @@ export default class Example3Controller extends Controller {
   @service('domain-1/business-logic')
   declare domain1BusinessLogic: Services['domain-1/business-logic'];
 
-  @service declare currentUser: Services['current-user'];
-  @service declare api: Services['api'];
+  @service
+  declare currentUser: Services['current-user'];
+  @service
+  declare api: Services['api'];
 
   @action async consent(): Promise<void> {
     const id = this.currentUser.user!.id;

@@ -5,10 +5,12 @@ import { service } from '@ember/service';
 
 export default class Example4Controller extends Controller {
   @service('domain-1/business-logic')
-  private declare readonly domain1BusinessLogic: Services['domain-1/business-logic'];
+  declare domain1BusinessLogic: Services['domain-1/business-logic'];
 
-  @service private declare readonly currentUser: Services['current-user'];
-  @service private declare readonly api: Services['api'];
+  @service
+  declare currentUser: Services['current-user'];
+  @service
+  declare api: Services['api'];
 
   @action async consent(): Promise<void> {
     const id = this.currentUser.user!.id;

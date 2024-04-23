@@ -3,7 +3,8 @@ import Service, { service } from '@ember/service';
 import type CurrentUserService from '../current-user';
 
 export default class Domain1BusinessLogicService extends Service {
-  @service declare currentUser: CurrentUserService;
+  @service
+  declare currentUser: CurrentUserService;
 
   get message(): string | undefined {
     const { user } = this.currentUser;

@@ -8,10 +8,12 @@ import type Domain1BusinessLogicService from '../services/domain-1/business-logi
 
 export default class Example8Component extends Component {
   @service('domain-1/business-logic')
-  public domain1BusinessLogic!: Domain1BusinessLogicService;
+  declare domain1BusinessLogic: Domain1BusinessLogicService;
 
-  @service public currentUser!: CurrentUserService;
-  @service public api!: ApiService;
+  @service
+  declare currentUser: CurrentUserService;
+  @service
+  declare api: ApiService;
 
   @action async consent(): Promise<void> {
     const id = this.currentUser.user!.id;
