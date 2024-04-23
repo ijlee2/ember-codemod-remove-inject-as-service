@@ -1,0 +1,24 @@
+import Service, { inject } from '@ember/service';
+
+import type CurrentUserService from '../current-user';
+
+export default class Domain1BusinessLogicService extends Service {
+  @inject declare currentUser: CurrentUserService;
+
+  get message(): string | undefined {
+    const { user } = this.currentUser;
+
+    if (!user) {
+      return;
+    }
+
+    return `Hello, ${user.name}!`;
+  }
+}
+
+// DO NOT DELETE: this is how TypeScript knows how to look up your services.
+declare module '@ember/service' {
+  interface Registry {
+    'domain-1/business-logic': Domain1BusinessLogicService;
+  }
+}
