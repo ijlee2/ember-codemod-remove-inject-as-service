@@ -2,8 +2,8 @@ import Route from '@ember/routing/route';
 import { service } from '@ember/service';
 
 export default Route.extend({
-  xyz: s('api'),
-  user: s('current-user'),
+  xyz: service('api'),
+  user: service('current-user'),
 
   async model() {
     await this.user.fetchUser();
