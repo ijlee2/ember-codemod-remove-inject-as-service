@@ -77,7 +77,21 @@ function updateServiceDecorators(
   const traverse = AST.traverse(data.isTypeScript);
 
   const ast = traverse(file, {
-    // ...
+    visitCallExpression(node) {
+      this.traverse(node);
+
+      switch (node.value.callee.type) {
+        case 'Identifier': {
+          if (node.value.callee.name === data.localName) {
+            node.value.callee.name = 'service';
+          }
+
+          break;
+        }
+      }
+
+      return false;
+    },
   });
 
   return AST.print(ast);
