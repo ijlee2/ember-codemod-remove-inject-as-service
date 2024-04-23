@@ -102,11 +102,13 @@ function updateServiceDecorators(
       }
 
       const decorator = node.value.decorators[0];
+      let isMatch = false;
 
       switch (decorator.expression.type) {
         case 'CallExpression': {
           if (decorator.expression.callee.name === data.localName) {
             decorator.expression.callee.name = 'service';
+            isMatch = true;
           }
 
           break;
@@ -115,10 +117,23 @@ function updateServiceDecorators(
         case 'Identifier': {
           if (decorator.expression.name === data.localName) {
             decorator.expression.name = 'service';
+            isMatch = true;
           }
 
           break;
         }
+      }
+
+      if (!isMatch || !data.isTypeScript) {
+        return false;
+      }
+
+      // Stylistic choices
+      if (!decorator.trailingComments) {
+        node.value.accessibility = null;
+        node.value.declare = true;
+        node.value.definite = null;
+        node.value.readonly = null;
       }
 
       return false;
