@@ -54,7 +54,7 @@ function updateImportStatement(
 
         localName = specifier.local!.name as string;
 
-        return specifier;
+        return AST.builders.importSpecifier(AST.builders.identifier('service'));
       });
 
       return false;
@@ -92,8 +92,6 @@ export function updateClass(file: string, isTypeScript: boolean): string {
   if (!localName) {
     return file;
   }
-
-  console.log(localName);
 
   newFile = updateServiceDecorators(newFile, {
     isTypeScript,
