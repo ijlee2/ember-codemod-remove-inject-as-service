@@ -92,6 +92,37 @@ function updateServiceDecorators(
 
       return false;
     },
+
+    visitClassProperty(node) {
+      if (
+        !Array.isArray(node.value.decorators) ||
+        node.value.decorators.length !== 1
+      ) {
+        return false;
+      }
+
+      const decorator = node.value.decorators[0];
+
+      switch (decorator.expression.type) {
+        case 'CallExpression': {
+          if (decorator.expression.callee.name === data.localName) {
+            decorator.expression.callee.name = 'service';
+          }
+
+          break;
+        }
+
+        case 'Identifier': {
+          if (decorator.expression.name === data.localName) {
+            decorator.expression.name = 'service';
+          }
+
+          break;
+        }
+      }
+
+      return false;
+    },
   });
 
   return AST.print(ast);
