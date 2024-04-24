@@ -1,5 +1,5 @@
 import { computed } from '@ember/object';
-import Service, { inject as s } from '@ember/service';
+import Service, { service } from '@ember/service';
 import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
@@ -12,7 +12,7 @@ module('Integration | Component | example-6', function (hooks) {
     this.owner.register(
       'service:domain-1/business-logic',
       Service.extend({
-        intl: s('intl'),
+        intl: service('intl'),
 
         message: computed(function () {
           return this.intl.t('hello.message', { name: 'Tomster' });

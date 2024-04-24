@@ -1,5 +1,5 @@
 import Service, {
-  inject as service,
+  service,
   type Registry as Services,
 } from '@ember/service';
 import { click, render } from '@ember/test-helpers';
@@ -14,7 +14,8 @@ module('Integration | Component | example-1', function (hooks) {
     this.owner.register(
       'service:domain-1/business-logic',
       class Domain1BusinessLogicService extends Service {
-        @service private declare readonly intl: Services['intl'];
+        @service
+        declare intl: Services['intl'];
 
         get message(): string {
           return this.intl.t('hello.message', { name: 'Tomster' });

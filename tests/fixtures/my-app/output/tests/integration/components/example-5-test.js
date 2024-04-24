@@ -1,4 +1,4 @@
-import Service, { inject } from '@ember/service';
+import Service, { service } from '@ember/service';
 import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
@@ -11,7 +11,7 @@ module('Integration | Component | example-5', function (hooks) {
     this.owner.register(
       'service:domain-1/business-logic',
       class Domain1BusinessLogicService extends Service {
-        @inject intl;
+        @service intl;
 
         get message() {
           return this.intl.t('hello.message', { name: 'Tomster' });

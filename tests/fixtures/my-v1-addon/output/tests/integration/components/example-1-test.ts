@@ -11,7 +11,8 @@ module('Integration | Component | example-1', function (hooks) {
     this.owner.register(
       'service:domain-1/business-logic',
       class Domain1BusinessLogicService extends Service {
-        @service declare intl: Services['intl'];
+        @service
+        declare intl: Services['intl'];
 
         get message(): string {
           return this.intl.t('hello.message', { name: 'Tomster' });
