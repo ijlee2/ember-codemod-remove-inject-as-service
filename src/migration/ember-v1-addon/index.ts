@@ -5,8 +5,5 @@ import { updateProject } from '../../utils/steps/update-project.js';
 export function migrateEmberV1Addon(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
 
-  updateProject(
-    ['addon/**/*.{js,ts}', 'tests/dummy/app/**/*.{js,ts}'],
-    options,
-  );
+  updateProject(options);
 }
