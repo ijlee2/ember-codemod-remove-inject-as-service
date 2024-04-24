@@ -7,7 +7,7 @@ const codemodOptions: CodemodOptions = {
 
 const options: Options = {
   projectRoot: 'tmp/my-v2-addon',
-  projectType: 'v2-addon',
+  src: ['src/**/*.{js,ts}'],
 };
 
 export { codemodOptions, options };
