@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 import { findFiles } from '@codemod-utils/files';
 
-import { Options } from '../../types/index.js';
+import { Options } from '../types/index.js';
 import { updateClass } from './update-project/update-class.js';
 
 export function updateProject(options: Options): void {
