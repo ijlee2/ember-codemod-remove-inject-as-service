@@ -41,15 +41,10 @@ npx ember-codemod-remove-inject-as-service <arguments>
 
 Step 2. Fix formatting issues.
 
-- Optional: Do a find-and-replace-all in TS files, if you want to place `@service()` and `declare` on the same line when possible.
+- Optional: Do a find-and-replace-all in TS files, if you want to place `@service` and `declare` on the same line whenever possible.
 
-    - Find: `@service\((.+)\)[\n\s]+declare`
-    - Replace: `@service($1) declare`
-
-- Optional: Do a find-and-replace-all in TS files, if you want to place `@service` and `declare` on the same line when possible.
-
-    - Find: `@service[\n\s]+declare`
-    - Replace: `@service declare`
+    - Find: `@service(\(.*\))?[\n\s]+declare`
+    - Replace: `@service$1 declare`
 
 - Run `lint:js:fix` (i.e. autofix from `eslint` and `prettier`).
 
