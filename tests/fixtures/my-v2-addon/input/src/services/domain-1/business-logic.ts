@@ -1,6 +1,6 @@
 import Service, { inject } from '@ember/service';
 
-import type CurrentUserService from '../current-user';
+import type CurrentUserService from '../current-user.ts';
 
 export default class Domain1BusinessLogicService extends Service {
   @inject declare currentUser: CurrentUserService;

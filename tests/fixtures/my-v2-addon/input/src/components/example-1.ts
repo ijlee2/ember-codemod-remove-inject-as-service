@@ -2,9 +2,9 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 
-import type ApiService from '../services/api';
-import type CurrentUserService from '../services/current-user';
-import type Domain1BusinessLogicService from '../services/domain-1/business-logic';
+import type ApiService from '../services/api.ts';
+import type CurrentUserService from '../services/current-user.ts';
+import type Domain1BusinessLogicService from '../services/domain-1/business-logic.ts';
 
 export default class Example1Component extends Component {
   @service('domain-1/business-logic')
