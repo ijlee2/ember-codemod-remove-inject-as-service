@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.2
+
+### Patch Changes
+
+- [#5](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/5) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#4](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/4) Used pnpm@9 to manage dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.1.1
 
 ### Patch Changes
