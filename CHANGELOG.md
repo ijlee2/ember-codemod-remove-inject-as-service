@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3
+
+### Patch Changes
+
+- [#6](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/6) Downstreamed changes from @codemod-utils@2.0.1 ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.1.2
 
 ### Patch Changes
