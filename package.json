@@ -1,6 +1,6 @@
 {
   "name": "ember-codemod-remove-inject-as-service",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Codemod to remove `inject as service`",
   "keywords": [
     "codemod",
@@ -24,13 +24,13 @@
   ],
   "scripts": {
     "build": "./build.sh --production",
-    "lint": "concurrently 'pnpm:lint:*(!fix)' --names 'lint:'",
-    "lint:fix": "concurrently 'pnpm:lint:*:fix' --names 'fix:'",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\"",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
     "prepare": "pnpm build",
-    "release:changelog": "changeset version",
+    "release:prepare": "changeset version",
     "release:publish": "pnpm build && changeset publish",
     "test": "./build.sh --test && mt dist-for-testing --quiet"
   },

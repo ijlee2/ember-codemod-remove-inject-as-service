@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.5
+
+### Patch Changes
+
+- [#8](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/8) Updated eslint to v9 ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.1.4
 
 ### Patch Changes
