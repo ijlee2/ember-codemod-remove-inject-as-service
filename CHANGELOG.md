@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.6
+
+### Patch Changes
+
+- [#9](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/9) Simplified lint configurations ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.1.5
 
 ### Patch Changes
