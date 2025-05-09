@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.0
+
+### Major Changes
+
+- [#11](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/11) Dropped Node 18 support ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#11](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/11) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 1.1.7
 
 ### Patch Changes
