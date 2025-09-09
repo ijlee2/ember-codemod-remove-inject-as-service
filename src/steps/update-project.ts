@@ -6,6 +6,10 @@ import { findFiles } from '@codemod-utils/files';
 import type { Options } from '../types/index.js';
 import { updateClass } from './update-project/update-class.js';
 
+function isTypeScript(filePath: string): boolean {
+  return filePath.endsWith('.gts') || filePath.endsWith('.ts');
+}
+
 export function updateProject(options: Options): void {
   const { projectRoot, src } = options;
 
@@ -15,11 +19,13 @@ export function updateProject(options: Options): void {
 
   filePaths.forEach((filePath) => {
     const oldPath = join(projectRoot, filePath);
-    const oldFile = readFileSync(oldPath, 'utf8');
+    let newFile = readFileSync(oldPath, 'utf8');
 
-    const isTypeScript = filePath.endsWith('.ts');
+    const data = {
+      isTypeScript: isTypeScript(filePath),
+    };
 
-    const newFile = updateClass(oldFile, isTypeScript);
+    newFile = updateClass(newFile, data);
 
     writeFileSync(oldPath, newFile, 'utf8');
   });

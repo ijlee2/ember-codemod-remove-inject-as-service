@@ -3,11 +3,11 @@ import type { CodemodOptions, Options } from '../types/index.js';
 function getSrc(projectType: CodemodOptions['projectType']): string[] {
   switch (projectType) {
     case 'app': {
-      return ['app/**/*.{js,ts}', 'tests/**/*.{js,ts}'];
+      return ['{app,tests}/**/*.{js,ts}'];
     }
 
     case 'v1-addon': {
-      return ['addon/**/*.{js,ts}', 'tests/**/*.{js,ts}'];
+      return ['{addon,tests}/**/*.{js,ts}'];
     }
 
     case 'v2-addon': {
