@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
+import { updateJavaScript } from '@codemod-utils/ast-template-tag';
 import { findFiles } from '@codemod-utils/files';
 
 import type { Options } from '../types/index.js';
@@ -25,7 +26,13 @@ export function updateProject(options: Options): void {
       isTypeScript: isTypeScript(filePath),
     };
 
-    newFile = updateClass(newFile, data);
+    if (filePath.endsWith('.js') || filePath.endsWith('.ts')) {
+      newFile = updateClass(newFile, data);
+    } else {
+      newFile = updateJavaScript(newFile, (code) => {
+        return updateClass(code, data);
+      });
+    }
 
     writeFileSync(oldPath, newFile, 'utf8');
   });

@@ -7,7 +7,7 @@ const codemodOptions: CodemodOptions = {
 
 const options: Options = {
   projectRoot: 'tmp/my-app',
-  src: ['{app,tests}/**/*.{js,ts}'],
+  src: ['{app,tests}/**/*.{gjs,gts,js,ts}'],
 };
 
 export { codemodOptions, options };
