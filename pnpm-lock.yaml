@@ -11,6 +11,9 @@ importers:
       '@codemod-utils/ast-javascript':
         specifier: ^2.0.6
         version: 2.0.6
+      '@codemod-utils/ast-template-tag':
+        specifier: ^0.1.0
+        version: 0.1.0
       '@codemod-utils/files':
         specifier: ^3.0.4
         version: 3.0.4
@@ -201,6 +204,10 @@ packages:
 
   '@codemod-utils/ast-javascript@2.0.6':
     resolution: {integrity: sha512-UcIdtWxgthxMu2V1sXq9qSFTnkWvUlJJIQGjS0tvtc3PnTiX1/qfvPhdsD8Nt4cWYjDBpNpsKSkCY/UIeAfPLw==}
+    engines: {node: 20.* || >= 22}
+
+  '@codemod-utils/ast-template-tag@0.1.0':
+    resolution: {integrity: sha512-iHsPCM6c6vwJ0aylfSs4Ir3q/Sah29yfOPKyk8Hry8WmjelE1rIr5NKqMIZMxuABuLWmV0OJl6lBYlqFRYFLzw==}
     engines: {node: 20.* || >= 22}
 
   '@codemod-utils/files@3.0.4':
@@ -2314,6 +2321,10 @@ snapshots:
     dependencies:
       '@babel/parser': 7.28.4
       recast: 0.23.11
+
+  '@codemod-utils/ast-template-tag@0.1.0':
+    dependencies:
+      content-tag: 4.0.0
 
   '@codemod-utils/files@3.0.4':
     dependencies:
