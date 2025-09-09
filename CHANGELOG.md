@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.1.0
+
+### Minor Changes
+
+- [#17](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/17) Supported `*.{gjs,gts}` files ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#16](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/16) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.0.2
 
 ### Patch Changes

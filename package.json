@@ -1,6 +1,6 @@
 {
   "name": "ember-codemod-remove-inject-as-service",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Codemod to remove `inject as service`",
   "keywords": [
     "codemod",
