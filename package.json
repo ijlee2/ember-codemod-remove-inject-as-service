@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@codemod-utils/ast-javascript": "^2.0.6",
+    "@codemod-utils/ast-template-tag": "^0.1.0",
     "@codemod-utils/files": "^3.0.4",
     "yargs": "^18.0.0"
   },

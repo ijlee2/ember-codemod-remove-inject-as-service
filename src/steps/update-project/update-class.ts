@@ -143,7 +143,13 @@ function updateServiceDecorators(
   return AST.print(ast);
 }
 
-export function updateClass(file: string, isTypeScript: boolean): string {
+type Data = {
+  isTypeScript: boolean;
+};
+
+export function updateClass(file: string, data: Data): string {
+  const { isTypeScript } = data;
+
   // eslint-disable-next-line prefer-const
   let { localName, newFile } = updateImportStatement(file, {
     isTypeScript,
