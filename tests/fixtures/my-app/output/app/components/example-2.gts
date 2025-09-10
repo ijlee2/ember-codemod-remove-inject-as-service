@@ -8,7 +8,7 @@ import type Domain1BusinessLogicService from '../services/domain-1/business-logi
 
 export default class Example2Component extends Component {
   <template>
-    Template goes here
+  Template goes here
   </template>
 
   @service('domain-1/business-logic')
