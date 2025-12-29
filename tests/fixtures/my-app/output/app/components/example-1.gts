@@ -21,7 +21,5 @@ export default class Example1Component extends Component {
       await this.api.post('consent', { id });
     }
 
-    <template>
-    Template goes here
-    </template>
+    <template>Template goes here</template>
 }
