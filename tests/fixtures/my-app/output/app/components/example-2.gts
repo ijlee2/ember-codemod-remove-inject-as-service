@@ -7,9 +7,7 @@ import type CurrentUserService from '../services/current-user';
 import type Domain1BusinessLogicService from '../services/domain-1/business-logic';
 
 export default class Example2Component extends Component {
-  <template>
-  Template goes here
-  </template>
+  <template>Template goes here</template>
 
   @service('domain-1/business-logic')
   declare dbl: Domain1BusinessLogicService;
