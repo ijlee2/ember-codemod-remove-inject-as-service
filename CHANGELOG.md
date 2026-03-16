@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.1
+
+### Patch Changes
+
+- [#31](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/31) Recommended the use of pnpx ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.0.0
 
 ### Major Changes
