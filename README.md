@@ -36,7 +36,7 @@ Step 1. Quickly migrate.
 
 ```sh
 cd <path/to/your/project>
-npx ember-codemod-remove-inject-as-service <arguments>
+pnpx ember-codemod-remove-inject-as-service <arguments>
 ```
 
 Step 2. Fix formatting issues.
@@ -55,9 +55,9 @@ Step 2. Fix formatting issues.
 You must pass `--type` to indicate what type of project you have.
 
 ```sh
-npx ember-codemod-remove-inject-as-service --type app
-npx ember-codemod-remove-inject-as-service --type v1-addon
-npx ember-codemod-remove-inject-as-service --type v2-addon
+pnpx ember-codemod-remove-inject-as-service --type app
+pnpx ember-codemod-remove-inject-as-service --type v1-addon
+pnpx ember-codemod-remove-inject-as-service --type v2-addon
 ```
 
 <details>
@@ -67,7 +67,7 @@ npx ember-codemod-remove-inject-as-service --type v2-addon
 Pass `--root` to run the codemod somewhere else (i.e. not in the current directory).
 
 ```sh
-npx ember-codemod-remove-inject-as-service --root <path/to/your/project>
+pnpx ember-codemod-remove-inject-as-service --root <path/to/your/project>
 ```
 
 </details>
