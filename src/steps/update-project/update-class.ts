@@ -1,5 +1,7 @@
 import { AST } from '@codemod-utils/ast-javascript';
 
+type Decorator = ReturnType<typeof AST.builders.decorator>;
+
 function isValueImport(
   importKind: 'type' | 'typeof' | 'value' | undefined,
 ): boolean {
@@ -36,7 +38,8 @@ function updateImportStatement(
       }
 
       path.node.specifiers = specifiers.map((specifier) => {
-        // @ts-expect-error: 'specifier.importKind' exists
+        // @ts-expect-error: Incorrect type
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         if (!isValueImport(specifier.importKind)) {
           return specifier;
         }
@@ -77,13 +80,13 @@ function updateServiceDecorators(
   const traverse = AST.traverse(data.isTypeScript);
 
   const ast = traverse(file, {
-    visitCallExpression(node) {
-      this.traverse(node);
+    visitCallExpression(path) {
+      this.traverse(path);
 
-      switch (node.value.callee.type) {
+      switch (path.node.callee.type) {
         case 'Identifier': {
-          if (node.value.callee.name === data.localName) {
-            node.value.callee.name = 'service';
+          if (path.node.callee.name === data.localName) {
+            path.node.callee.name = 'service';
           }
 
           break;
@@ -93,20 +96,23 @@ function updateServiceDecorators(
       return false;
     },
 
-    visitClassProperty(node) {
-      if (
-        !Array.isArray(node.value.decorators) ||
-        node.value.decorators.length !== 1
-      ) {
+    visitClassProperty(path) {
+      // @ts-expect-error: Incorrect type
+      const decorators = path.node.decorators as Decorator[];
+
+      if (!Array.isArray(decorators) || decorators.length !== 1) {
         return false;
       }
 
-      const decorator = node.value.decorators[0];
+      const decorator = decorators[0]!;
       let isMatch = false;
 
       switch (decorator.expression.type) {
         case 'CallExpression': {
-          if (decorator.expression.callee.name === data.localName) {
+          if (
+            decorator.expression.callee.type === 'Identifier' &&
+            decorator.expression.callee.name === data.localName
+          ) {
             decorator.expression.callee.name = 'service';
             isMatch = true;
           }
@@ -124,16 +130,21 @@ function updateServiceDecorators(
         }
       }
 
-      if (!isMatch || !data.isTypeScript) {
+      if (!isMatch) {
         return false;
       }
 
       // Stylistic choices
-      if (!decorator.trailingComments) {
-        node.value.accessibility = null;
-        node.value.declare = true;
-        node.value.definite = null;
-        node.value.readonly = null;
+      // @ts-expect-error: Incorrect type
+      if (data.isTypeScript && !decorator.trailingComments) {
+        // @ts-expect-error: Incorrect type
+        path.node.accessibility = null;
+        // @ts-expect-error: Incorrect type
+        path.node.declare = true;
+        // @ts-expect-error: Incorrect type
+        path.node.definite = null;
+        // @ts-expect-error: Incorrect type
+        path.node.readonly = null;
       }
 
       return false;
