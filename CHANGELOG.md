@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.0
+
+### Minor Changes
+
+- [#37](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/37) Updated dependencies (`@codemod-utils/ast-javascript` to v4) ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.1.2
 
 ### Patch Changes
