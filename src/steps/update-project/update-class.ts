@@ -8,20 +8,13 @@ function isValueImport(
   return importKind === undefined || importKind === 'value';
 }
 
-function updateImportStatement(
-  file: string,
-  data: {
-    isTypeScript: boolean;
-  },
-): {
+function updateImportStatement(file: string): {
   localName: string | undefined;
   newFile: string;
 } {
   let localName: string | undefined;
 
-  const traverse = AST.traverse(data.isTypeScript);
-
-  const ast = traverse(file, {
+  const ast = AST.traverse(file, {
     visitImportDeclaration(path) {
       const { importKind, source, specifiers } = path.node;
 
@@ -29,7 +22,7 @@ function updateImportStatement(
         return false;
       }
 
-      if (source.type !== 'Literal' && source.type !== 'StringLiteral') {
+      if (source.type !== 'StringLiteral') {
         return false;
       }
 
@@ -77,9 +70,7 @@ function updateServiceDecorators(
     localName: string;
   },
 ): string {
-  const traverse = AST.traverse(data.isTypeScript);
-
-  const ast = traverse(file, {
+  const ast = AST.traverse(file, {
     visitCallExpression(path) {
       this.traverse(path);
 
@@ -162,9 +153,7 @@ export function updateClass(file: string, data: Data): string {
   const { isTypeScript } = data;
 
   // eslint-disable-next-line prefer-const
-  let { localName, newFile } = updateImportStatement(file, {
-    isTypeScript,
-  });
+  let { localName, newFile } = updateImportStatement(file);
 
   if (!localName) {
     return file;
