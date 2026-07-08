@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.2
+
+### Patch Changes
+
+- [#39](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/39) Updated dependencies (eslint@v10, typescript@v6) ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.2.1
 
 ### Patch Changes
