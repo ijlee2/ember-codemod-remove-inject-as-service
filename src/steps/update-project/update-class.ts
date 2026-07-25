@@ -26,7 +26,7 @@ function updateImportStatement(file: string): {
         return false;
       }
 
-      if (source.value !== '@ember/service' || !Array.isArray(specifiers)) {
+      if (source.value !== '@ember/service' || specifiers === undefined) {
         return false;
       }
 
@@ -89,9 +89,9 @@ function updateServiceDecorators(
 
     visitClassProperty(path) {
       // @ts-expect-error: Incorrect type
-      const decorators = path.node.decorators as Decorator[];
+      const decorators = path.node.decorators as Decorator[] | undefined;
 
-      if (!Array.isArray(decorators) || decorators.length !== 1) {
+      if (decorators === undefined || decorators.length !== 1) {
         return false;
       }
 
@@ -102,7 +102,8 @@ function updateServiceDecorators(
         case 'CallExpression': {
           if (
             decorator.expression.callee.type === 'Identifier' &&
-            decorator.expression.callee.name === data.localName
+            decorator.expression.callee.name === data.localName &&
+            path.node.key.type === 'Identifier'
           ) {
             decorator.expression.callee.name = 'service';
             isMatch = true;
@@ -112,7 +113,10 @@ function updateServiceDecorators(
         }
 
         case 'Identifier': {
-          if (decorator.expression.name === data.localName) {
+          if (
+            decorator.expression.name === data.localName &&
+            path.node.key.type === 'Identifier'
+          ) {
             decorator.expression.name = 'service';
             isMatch = true;
           }
