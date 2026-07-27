@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.3
+
+### Patch Changes
+
+- [#41](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/41) Standardized code for service decorator ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.2.2
 
 ### Patch Changes
