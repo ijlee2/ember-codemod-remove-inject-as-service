@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.5
+
+### Patch Changes
+
+- [#43](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/43) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.2.4
 
 ### Patch Changes
