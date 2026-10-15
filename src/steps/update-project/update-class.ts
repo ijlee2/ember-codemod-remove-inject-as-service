@@ -32,7 +32,7 @@ function updateImportStatement(file: string): {
 
       path.node.specifiers = specifiers.map((specifier) => {
         // @ts-expect-error: Incorrect type
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+        // oxlint-disable-next-line typescript/no-unsafe-argument
         if (!isValueImport(specifier.importKind)) {
           return specifier;
         }
@@ -156,7 +156,7 @@ type Data = {
 export function updateClass(file: string, data: Data): string {
   const { isTypeScript } = data;
 
-  // eslint-disable-next-line prefer-const
+  // oxlint-disable-next-line eslint/prefer-const
   let { localName, newFile } = updateImportStatement(file);
 
   if (!localName) {
