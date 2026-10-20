@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.8
+
+### Patch Changes
+
+- [#50](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/50) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+- [#49](https://github.com/ijlee2/ember-codemod-remove-inject-as-service/pull/49) Introduced trusted publishing ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.2.7
 
 ### Patch Changes
